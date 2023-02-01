@@ -27,6 +27,7 @@ int main()
             }
             cout << "desea continuar? ";
             cin >> SN;
+            i = 0;
         } while (SN == 'S' || SN == 's');
     }
     if (inicial == 2)
@@ -48,12 +49,13 @@ int main()
     }
     if (inicial == 3)
     {
-        cout << "Escribe un numero:";
-        cin >> n;
-        do {
+
+        do
+        {
+            cout << "Escribe un numero:";
+            cin >> n;
             do
             {
-
                 if (i <= 12)
                 {
                     cout << i << " * " << n << " = " << i * n << endl;
@@ -67,6 +69,11 @@ int main()
             } while (a);
             cout << "desea continuar? ";
             cin >> SN;
+            if (SN == 'S' || SN == 's')
+            {
+                a = true;
+            }
+            i = 0;
         } while (SN == 'S' || SN == 's');
     }
 
