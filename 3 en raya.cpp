@@ -36,81 +36,149 @@ int main() {
 		{
 			if (ubi == 1)
 			{
-				F1 = x;
+				if(F1 != x || F1 != o)
+                {				
+				    F1 = x;
+                }
 			}
 			else if (ubi == 2)
 			{
-				F2 = x;
+				if(F2 != x || F2 != o)
+				{
+				    F2 = x;
+				}
 			}
 			else if (ubi == 3)
 			{
-				F3 = x;
+				if(F3 != x || F3 != o)
+				{
+				    F3 = x;
+				}
 			}
 			else if (ubi == 4)
 			{
+				if(F4 != x || F4 != o)
+				{
 				F4 = x;
+				}
 			}
 			else if (ubi == 5)
 			{
+				if(F5 != x || F5 != o)
+				{
 				F5 = x;
+				}
 			}
 			else if (ubi == 6)
 			{
+				if(F6 != x || F6 != o)
+				{
 				F6 = x;
+				}
 			}
 			else if (ubi == 7)
 			{
-				F7 = x;
+				if(F7 != x || F7 != o)
+				{
+				    F7 = x;
+				}
 			}
 			else if (ubi == 8)
 			{
+				if(F8 != x || F8 != o)
+				{
 				F8 = x;
+				}
 			}
 			else if (ubi == 9)
 			{
+				if(F9 != x || F9 != o)
+				{
 				F9 = x;
+				}
 			}
 		}
 		//JUGADOR 2
 		if (jugador2)
 		{
-			if (ubi == 1)
-			{
-				F1 = o;
-			}
-			else if (ubi == 2)
-			{
-				F2 = o;
-			}
-			else if (ubi == 3)
-			{
-				F3 = o;
-			}
-			else if (ubi == 4)
-			{
-				F4 = o;
-			}
-			else if (ubi == 5)
-			{
-				F5 = o;
-			}
-			else if (ubi == 6)
-			{
-				F6 = o;
-			}
-			else if (ubi == 7)
-			{
-				F7 = o;
-			}
-			else if (ubi == 8)
-			{
-				F8 = o;
-			}
-			else if (ubi == 9)
-			{
-				F9 = o;
-			}
+		    switch(ubi)
+			{    
+			    case 1:
+			    {
+			        if(F1 != x || F1 != o)
+			        {
+				        F1 = o;
+				        break;
+			        }
+			    }
+			    case 2:
+			    {
+			        if(F2 != x || F2 != o)
+			        {
+				    F2 = o;
+				    break;
+			        }
+			    }
+			    case 3:
+			    {
+				    if(F3 != x || F3 != o)
+				    {
+				    F3 = o;
+				    break;
+				    }
+			    }
+			    case 4:
+			    {
+				    if(F4 != x || F4 != o)
+				    {
+				    F4 = o;
+				    break;
+				    }
+			    }
+			    case 5:
+			    {
+				    if(F5 != x || F5 != o)
+				    {
+				    F5 = o;
+				    break;
+				    }
+			    }
+			    case 6:
+			    {
+				    if(F6 != x || F6 != o)
+				    {
+				    F6 = o;
+				    break;
+				    }
+			    }
+			    case 7:
+			    {
+				    if(F7 != x || F7 != o)
+				    {
+				    F7 = o;
+				    break;
+				    }
+			    }
+			    case 8:
+			    {
+				    if(F8 != x || F8 != o)
+				    {
+				    F8 = o;
+				    break;
+				    }
+			    }
+			    case 9:
+			    {
+				    if(F9 != x || F9 != o)
+				    {
+				    F9 = o;
+				    break;
+				    }
+			    }
+		
+			}			    
 		}
+		
 
 		cout << F7 << " | " << F8 << " | " << F9 << "\n" << F4 << " | " << F5 << " | " << F6 << "\n" << F1 << " | " << F2 << " | " << F3 << "\n";
 		
