@@ -2,10 +2,49 @@
 
 using namespace std;
 
+
+void EscribirFigura(char& casilla, bool& F1L1, bool& reset, int X, int contador)
+{
+
+	if (F1L1 == false)
+	{
+		casilla = X;
+		F1L1 = true;
+		reset = false;
+	}
+	else
+	{
+		cout << "Reingrese una ubicación: \n";
+		contador = contador - 1;
+		reset = true;
+	}
+
+	return;
+
+}
+
+
+void JugadorWins(char cas1,char cas2, char cas3, char X)
+{
+	if (cas1 == X && cas2 == X && cas3 == X)
+	{
+		cout << "Jugador 1 Gana!" << endl;
+		//break;
+		if (false) 
+		{
+			cout << "nadie gano" << endl;
+		}
+	}
+
+}
+
 int main() {
 	bool primerapasada{ true }, jugador1{ true }, jugador2{ false }, tmp{ }, F1L{false}, F2L{ false }, F3L{ false }, 
 		F4L{ false }, F5L{ false }, F6L{ false }, F7L{ false }, F8L{ false }, F9L{ false }, Reset{ false };
 	int ubi{ 0 }, i{ 0 };
+	char fila1[]{ ' ',' ',' ' };
+	char fila2[]{ ' ',' ',' ' };
+	char fila3[]{ ' ',' ',' ' };
 	char x{ 'X' }, o{ 'O' };
 	char F1{ ' ' }, F2{ ' ' }, F3{ ' ' }, F4{ ' ' }, F5{ ' ' }, F6{ ' ' }, F7{ ' ' }, F8{ ' ' }, F9{ ' ' };
 
@@ -37,138 +76,39 @@ int main() {
 		{
 			if (ubi == 1)
 			{
-				if (F1L==false)
-				{
-					F1 = x;
-					F1L = true;
-					Reset = false;
-				}
-				else
-				{
-					cout << "Reingrese una ubicación: \n";
-					i = i - 1;
-					Reset = true;
-				}
+				EscribirFigura(F1, F1L, Reset, x, i);
 			}
 			else if (ubi == 2)
 			{
-				if (F2L==false)
-				{
-					F2 = x;
-					F2L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F2, F2L, Reset, x, i);
 			}
 			else if (ubi == 3)
 			{
-				if (F3L==false)
-				{
-					F3 = x;
-					F3L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F3, F3L, Reset, x, i);
 			}
 			else if (ubi == 4)
 			{
-				if (F4L==false)
-				{
-					F4 = x;
-					F4L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F4, F4L, Reset, x, i);
 			}
 			else if (ubi == 5)
 			{
-				if (F5L==false)
-				{
-					F5 = x;
-					F5L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F5, F5L, Reset, x, i);
 			}
 			else if (ubi == 6)
 			{
-				if (F6L==false)
-				{
-					F6 = x;
-					F6L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F6, F6L, Reset, x, i);
 			}
 			else if (ubi == 7)
 			{
-				if (F7L==false)
-				{
-					F7 = x;
-					F7L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F7, F7L, Reset, x, i);
 			}
 			else if (ubi == 8)
 			{
-				if (F8L==false)
-				{
-					F8 = x;
-					F6L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F8, F8L, Reset, x, i);
 			}
 			else if (ubi == 9)
 			{
-				if (F9L==false)
-				{
-					F9 = x;
-					F9L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F9, F9L, Reset, x, i);
 			}
 		}
 		//JUGADOR 2
@@ -176,138 +116,39 @@ int main() {
 		{
 			if (ubi == 1)
 			{
-				if (F1L == false)
-				{
-					F1 = o;
-					F1L = true;
-					Reset = false;
-				}
-				else
-				{
-					cout << "Reingrese una ubicación: \n";
-					i = i - 1;
-					Reset = true;
-				}
+				EscribirFigura(F1, F1L, Reset, o, i);
 			}
 			else if (ubi == 2)
 			{
-				if (F2L == false)
-				{
-					F2 = o;
-					F2L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F2, F2L, Reset, o, i);
 			}
 			else if (ubi == 3)
 			{
-				if (F3L == false)
-				{
-					F3 = o;
-					F3L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F3, F3L, Reset, o, i);
 			}
 			else if (ubi == 4)
 			{
-				if (F4L == false)
-				{
-					F4 = o;
-					F4L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F4, F4L, Reset, o, i);
 			}
 			else if (ubi == 5)
 			{
-				if (F5L == false)
-				{
-					F5 = o;
-					F5L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F5, F5L, Reset, o, i);
 			}
 			else if (ubi == 6)
 			{
-				if (F6L == false)
-				{
-					F6 = o;
-					F6L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F6, F6L, Reset, o, i);
 			}
 			else if (ubi == 7)
 			{
-				if (F7L == false)
-				{
-					F7 = o;
-					F7L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F7, F7L, Reset, o, i);
 			}
 			else if (ubi == 8)
 			{
-				if (F8L == false)
-				{
-					F8 = o;
-					F6L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F8, F8L, Reset, o, i);
 			}
 			else if (ubi == 9)
 			{
-				if (F9L == false)
-				{
-					F9 = o;
-					F9L = true;
-					Reset = false;
-				}
-				else
-				{
-					i = i - 1;
-					cout << "Reingrese una ubicación: \n";
-					Reset = true;
-				}
+				EscribirFigura(F9, F9L, Reset, o, i);
 			}
 		}
 
@@ -323,83 +164,25 @@ int main() {
 			jugador1 = jugador2;
 			jugador2 = tmp;
 		}
+
 		//FORMAS DE GANAR JUGADOR 1
-		if (F1 == x && F2 == x && F3 == x)
-		{
-			cout << "Jugador 1 Gana!" << endl;
-			break;
-		}
-		else if (F1 == x && F5 == x && F9 == x)
-		{
-			cout << "Jugador 1 Gana!" << endl;
-			break;
-		}
-		else if (F1 == x && F4 == x && F7 == x)
-		{
-			cout << "Jugador 1 Gana!" << endl;
-			break;
-		}
-		else if (F7 == x && F8 == x && F9 == x)
-		{
-			cout << "Jugador 1 Gana!" << endl;
-			break;
-		}
-		else if (F3 == x && F6 == x && F9 == x)
-		{
-			cout << "Jugador 1 Gana!" << endl;
-			break;
-		}
-		else if (F4 == x && F5 == x && F6 == x)
-		{
-			cout << "Jugador 1 Gana!" << endl;
-			break;
-		}
-		else if (F7 == x && F5 == x && F3 == x)
-		{
-			cout << "Jugador 1 Gana!" << endl;
-			break;
-		}
+
+		JugadorWins(F1, F2, F3, x);
+		JugadorWins(F1, F5, F9, x);
+		JugadorWins(F1, F4, F7, x);
+		JugadorWins(F7, F8, F9, x);
+		JugadorWins(F3, F6, F9, x);
+		JugadorWins(F4, F5, F6, x);
+		JugadorWins(F7, F5, F3, x);
 
 		//FORMAS DE GANAR JUGADOR 2
-		else if (F1 == o && F2 == o && F3 == o)
-		{
-			cout << "Jugador 2 Gana!" << endl;
-			break;
-		}
-		else if (F1 == o && F5 == o && F9 == o)
-		{
-			cout << "Jugador 2 Gana!" << endl;
-			break;
-		}
-		else if (F1 == o && F4 == o && F7 == o)
-		{
-			cout << "Jugador 2 Gana!" << endl;
-			break;
-		}
-		else if (F7 == o && F8 == o && F9 == o)
-		{
-			cout << "Jugador 2 Gana!" << endl;
-			break;
-		}
-		else if (F3 == o && F6 == o && F9 == o)
-		{
-			cout << "Jugador 2 Gana!" << endl;
-			break;
-		}
-		else if (F4 == o && F5 == o && F6 == o)
-		{
-			cout << "Jugador 2 Gana!" << endl;
-			break;
-		}
-		else if (F7 == o && F5 == o && F3 == o)
-		{
-			cout << "Jugador 2 Gana!" << endl;
-			break;
-		}
-		else
-		{
-			cout << "nadie gana\n---------------------------\n";
-		}
+		JugadorWins(F1, F2, F3, o);
+		JugadorWins(F1, F5, F9, o);
+		JugadorWins(F1, F4, F7, o);
+		JugadorWins(F7, F8, F9, o);
+		JugadorWins(F3, F6, F9, o);
+		JugadorWins(F4, F5, F6, o);
+		JugadorWins(F7, F5, F3, o);
 
 	} while (i < 9);
 	
