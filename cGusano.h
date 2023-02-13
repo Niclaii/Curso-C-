@@ -5,7 +5,7 @@ class cGusano
 {
 public:
 	char caracterGus;
-	int x_gus, y_gus,x_cuerpo,y_cuerpo;
+	int x_gus, y_gus, x_cuerpo, y_cuerpo;
 
 
 	cGusano()
@@ -23,7 +23,7 @@ public:
 		y_gus = in_y;
 	}
 	//
-	int get_xGus() 
+	int get_xGus()
 	{
 		return x_gus;
 	}
@@ -78,3 +78,4 @@ public:
 	}
 
 };
+

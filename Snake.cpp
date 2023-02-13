@@ -18,17 +18,17 @@ int main() {
     cGusano Gusano;
 
 
-    do 
+    do
     {
         miMatriz.mover_gusano();
         miMatriz.imprimirTablero();
-        
+
 
 
 
 
     } while (miMatriz.getPerder() == false);
-    
+
     if (miMatriz.getPerder() == true)
     {
         cout << "\nPerdiste jaja.";

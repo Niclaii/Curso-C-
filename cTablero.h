@@ -9,8 +9,8 @@ class cTablero
 private:
 	cGusano nGusano;
 	char** ptrMatriz;
-	int nFilas,nColumnas,XRand,YRand;
-	bool perder,selec;
+	int nFilas, nColumnas, XRand, YRand;
+	bool perder, selec;
 	char Controlador;
 	Manzana Manzanita;
 	int cantidad;
@@ -27,7 +27,7 @@ public:
 		Controlador = ' ';
 		XRand = 0;
 		YRand = 0;
-		cantidad = 0;
+		cantidad = 1;
 	}
 	char Control{ ' ' };
 
@@ -116,7 +116,7 @@ public:
 		nGusano.iniciar_posicion_gusano(nX, nY);
 		ptrMatriz[nGusano.x_gus][nGusano.y_gus] = nGusano.caracterGus;
 	}
-	
+
 	void manzana()
 	{
 		do
@@ -136,52 +136,51 @@ public:
 
 		} while (selec == true);
 	}
+	void crecer()
+	{
+
+	}
 	void mover_cuerpo()
 	{
-		
+
 		if (Control == 'w' || Control == 'W')
 		{
-			if (cantidad > 0) {
-				nGusano.set_XCuerpo(nGusano.get_xGus() - 1);
-				nGusano.set_YCuerpo(nGusano.get_yGus());
+			if (cantidad > 1)
+			{
+				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()] == ptrMatriz[nGusano.get_xGus() + 1][nGusano.get_yGus()];
 				nGusano.mover_cuerpo(nGusano.get_XCuerpo(), nGusano.get_YCuerpo());
-				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()] == nGusano.caracterGus;
-				ptrMatriz[nGusano.get_XCuerpo() + 1][nGusano.get_YCuerpo()] = '*';
-
+				ptrMatriz[nGusano.get_XCuerpo() + 1][nGusano.get_YCuerpo()] == nGusano.caracterGus;
+				ptrMatriz[nGusano.get_xGus() + 2][nGusano.get_yGus()] = '*';
 			}
 		}
 		if (Control == 'a' || Control == 'A')
 		{
-			if (cantidad > 0)
+			if (cantidad > 1)
 			{
-				ptrMatriz[nGusano.get_xGus() - 1][nGusano.get_yGus()] = nGusano.get_charGus();
-				nGusano.set_XCuerpo(nGusano.get_xGus());
-				nGusano.set_YCuerpo(nGusano.get_yGus()-1);
+				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()] == ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus()-1];
 				nGusano.mover_cuerpo(nGusano.get_XCuerpo(), nGusano.get_YCuerpo());
-				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()] == nGusano.caracterGus;
-				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()+1] = '*';
+				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()+1] == nGusano.caracterGus;
+				ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus()+2] = '*';
 			}
 		}
 		if (Control == 's' || Control == 'S')
 		{
-			if (cantidad > 0)
+			if (cantidad > 1)
 			{
-				nGusano.set_XCuerpo(nGusano.get_xGus() + 1);
-				nGusano.set_YCuerpo(nGusano.get_yGus());
+				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()] == ptrMatriz[nGusano.get_xGus()+1][nGusano.get_yGus()];
 				nGusano.mover_cuerpo(nGusano.get_XCuerpo(), nGusano.get_YCuerpo());
-				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()] == nGusano.caracterGus;
-				ptrMatriz[nGusano.get_XCuerpo() - 1][nGusano.get_YCuerpo()] = '*';
+				ptrMatriz[nGusano.get_XCuerpo()-1][nGusano.get_YCuerpo()] == nGusano.caracterGus;
+				ptrMatriz[nGusano.get_xGus()-2][nGusano.get_yGus()] = '*';
 			}
 		}
 		if (Control == 'd' || Control == 'D')
 		{
-			if (cantidad > 0)
+			if (cantidad > 1)
 			{
-				nGusano.set_XCuerpo(nGusano.get_xGus());
-				nGusano.set_YCuerpo(nGusano.get_yGus()+1);
+				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()] == ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() + 1];
 				nGusano.mover_cuerpo(nGusano.get_XCuerpo(), nGusano.get_YCuerpo());
-				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()] == nGusano.caracterGus;
-				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo()-1] = '*';
+				ptrMatriz[nGusano.get_XCuerpo()][nGusano.get_YCuerpo() - 1] == nGusano.caracterGus;
+				ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() - 2] = '*';
 			}
 		}
 	}
@@ -202,35 +201,51 @@ public:
 				manzana();
 				ptrMatriz[nGusano.get_xGus() - 1][nGusano.get_yGus()] = nGusano.get_charGus();
 				nGusano.mover_pos(nGusano.get_xGus() - 1, nGusano.get_yGus());
-				++cantidad;
+				cantidad++;
+			
 			}
 			else
 			{
 				ptrMatriz[nGusano.get_xGus() - 1][nGusano.get_yGus()] = nGusano.caracterGus;
 				nGusano.mover_pos(nGusano.get_xGus() - 1, nGusano.get_yGus());
-				if (cantidad>0)
+				if (cantidad > 1)
 				{
 					mover_cuerpo();
 				}
+				else
+				{
+					ptrMatriz[nGusano.get_xGus() + cantidad][nGusano.get_yGus()] = '*';
+				}
+				
 			}
 		}
 		if (Control == 'a' || Control == 'A')
 		{
-			if (nGusano.get_yGus() - 1 == -1 || ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() - 1] == nGusano.caracterGus)
+			if (nGusano.get_xGus() - 1 == -1 || ptrMatriz[nGusano.get_xGus() - 1][nGusano.get_yGus()] == nGusano.caracterGus)
 			{
-					setPerder(true);
+				setPerder(true);
 			}
-			else if (ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() - 1] == Manzanita.get_charApple())
+			else if (ptrMatriz[nGusano.get_yGus() - 1][nGusano.get_yGus()] == Manzanita.get_charApple())
 			{
-					manzana();
-					ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() - 1] = nGusano.get_charGus();
-					nGusano.mover_pos(nGusano.get_xGus(), nGusano.get_yGus() - 1);
+				manzana();
+				ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus()-1] = nGusano.get_charGus();
+				nGusano.mover_pos(nGusano.get_xGus(), nGusano.get_yGus()-1);
+				cantidad++;
+
 			}
 			else
 			{
-					ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() - 1] = nGusano.caracterGus;
-					nGusano.mover_pos(nGusano.get_xGus(), nGusano.get_yGus() - 1);
-					ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() + 1] = '*';
+				ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus()-1] = nGusano.caracterGus;
+				nGusano.mover_pos(nGusano.get_xGus(), nGusano.get_yGus()-1);
+				if (cantidad > 1)
+				{
+					mover_cuerpo();
+				}
+				else
+				{
+					ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus()+1] = '*';
+				}
+
 			}
 		}
 		if (Control == 's' || Control == 'S')
@@ -244,12 +259,21 @@ public:
 				manzana();
 				ptrMatriz[nGusano.get_xGus() + 1][nGusano.get_yGus()] = nGusano.get_charGus();
 				nGusano.mover_pos(nGusano.get_xGus() + 1, nGusano.get_yGus());
+				cantidad++;
 			}
 			else
 			{
 				ptrMatriz[nGusano.get_xGus() + 1][nGusano.get_yGus()] = nGusano.caracterGus;
 				nGusano.mover_pos(nGusano.get_xGus() + 1, nGusano.get_yGus());
-				ptrMatriz[nGusano.get_xGus() - 1][nGusano.get_yGus()] = '*';
+				if (cantidad > 1)
+				{
+					mover_cuerpo();
+				}
+				else
+				{
+					ptrMatriz[nGusano.get_xGus() - 1][nGusano.get_yGus()] = '*';
+				}
+				
 			}
 		}
 		if (Control == 'd' || Control == 'D')
@@ -263,12 +287,21 @@ public:
 				manzana();
 				ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() + 1] = nGusano.get_charGus();
 				nGusano.mover_pos(nGusano.get_xGus(), nGusano.get_yGus() + 1);
+				cantidad++;
 			}
 			else
 			{
 				ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() + 1] = nGusano.caracterGus;
 				nGusano.mover_pos(nGusano.get_xGus(), nGusano.get_yGus() + 1);
-				ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() - 1] = '*';
+				if (cantidad > 1)
+				{
+					mover_cuerpo();
+				}
+				else
+				{
+					ptrMatriz[nGusano.get_xGus()][nGusano.get_yGus() - 1] = '*';
+				}
+				
 			}
 		}
 	}

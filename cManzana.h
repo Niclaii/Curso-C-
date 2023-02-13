@@ -11,7 +11,7 @@ private:
 public:
 	Manzana()
 	{
-		caracter_manzana = '$';
+		caracter_manzana = '&';
 		x_Apple = 0;
 		y_Apple = 0;
 	}
